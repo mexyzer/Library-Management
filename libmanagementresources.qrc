@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>LibManagementResourceFiles/Icons/Button-Close-icon.png</file>
+        <file>LibManagementResourceFiles/Icons/Misc-New-Database-icon.png</file>
+        <file>LibManagementResourceFiles/Icons/Pencil-icon.png</file>
+        <file>addbookentry.cpp</file>
+        <file>addbookentry.h</file>
+        <file>addbookentry.ui</file>
+        <file>libmanagementresources.qrc</file>
+        <file>LibraryManagement.pro</file>
+        <file>main.cpp</file>
+        <file>mainwindow.cpp</file>
+        <file>mainwindow.h</file>
+        <file>mainwindow.ui</file>
+        <file>LibManagementResourceFiles/Icons/database-remove-icon.png</file>
+    </qresource>
+</RCC>
