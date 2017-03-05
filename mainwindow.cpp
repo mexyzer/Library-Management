@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QStringList list=(QStringList()<<"Select"<<"ISBN"<<"Name"<<"Author"<<"Year");
     ui->comboBox->addItems(list);
-    //ui->label_3->setText(5);
 
 }
 
@@ -32,14 +31,64 @@ void MainWindow::on_actionNew_Entry_triggered()
 
 void MainWindow::on_pushButton_clicked()
 {
-    connectDatabase search;
-    search.openConnection();
-    QSqlQueryModel* modal = new QSqlQueryModel;
-    QSqlQuery *qry = new QSqlQuery(search.bookDB);
-    qry->prepare("select *from CSBooks;");
-    qry->exec();
-    modal->setQuery(*qry);
-    ui->tableView->setModel(modal);
-    //ui->tableView->hideColumn();
+    connectDatabase searchDB;
+    searchDB.openConnection();
+
+    if(!searchDB.openConnection()){
+        QMessageBox::critical(this,"Database Error!","Error Connecting to Database! Please try again or Check Database.");
+    }
+
+    //Modeling for Table View.
+
+    QSqlQueryModel* databaseModel = new QSqlQueryModel;
+
+    //Sql Query Prepration
+
+    QSqlQuery* databaseQuery = new QSqlQuery(searchDB.bookDB);
+
+    //Search based on option
+
+    if(ui->comboBox->currentText() == "ISBN"){
+
+        databaseQuery->prepare("select *from CSBooks where ISBN = :isbn;");
+        databaseQuery->bindValue(":isbn",ui->lineEdit->text());
+        databaseQuery->exec();
+    }
+
+
+    else if(ui->comboBox->currentText() == "Name"){
+
+        databaseQuery->prepare("select *from CSBooks where Name = :name;");
+        databaseQuery->bindValue(":name",ui->lineEdit->text());
+        databaseQuery->exec();
+    }
+
+
+    else if(ui->comboBox->currentText() == "Author"){
+
+        databaseQuery->prepare("select *from CSBooks where Author = :author;");
+        databaseQuery->bindValue(":author",ui->lineEdit->text());
+        databaseQuery->exec();
+    }
+
+
+    else if(ui->comboBox->currentText() == "Year"){
+
+        databaseQuery->prepare("select *from CSBooks where Year = :year ");
+        databaseQuery->bindValue(":year",ui->lineEdit->text());
+        databaseQuery->exec();
+    }
+
+
+    else if(ui->comboBox->currentText() == "Select"){
+
+        databaseQuery->exec("select *from CSBooks");
+    }
+
+
+    databaseModel->setQuery(*databaseQuery);
+    ui->tableView->setModel(databaseModel);
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    searchDB.closeConnection();
 }

@@ -27,7 +27,6 @@ private:
     Ui::MainWindow *ui;
     addbookentry addEntryForm;
     editentryForm editDBentry;
-    connectDatabase openConn;
 };
 
 #endif // MAINWINDOW_H

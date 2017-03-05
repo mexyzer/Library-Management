@@ -12,6 +12,7 @@
 #include <QSqlQueryModel>
 #include <string>
 #include <QString>
+#include <QComboBox>
 
 class connectDatabase
 {
