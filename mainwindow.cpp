@@ -92,3 +92,13 @@ void MainWindow::on_pushButton_clicked()
 
     searchDB.closeConnection();
 }
+
+void MainWindow::on_actionEdit_Entry_triggered()
+{
+    editDBentry.show();
+}
+
+void MainWindow::on_actionRemove_Entry_triggered()
+{
+    removeEntry.show();
+}

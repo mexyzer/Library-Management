@@ -15,16 +15,19 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     addbookentry.cpp \
-    editentryform.cpp
+    editentryform.cpp \
+    removeentryform.cpp
 
 HEADERS  += mainwindow.h \
     addbookentry.h \
     editentryform.h \
-    databaseconnection.h
+    databaseconnection.h \
+    removeentryform.h
 
 FORMS    += mainwindow.ui \
     addbookentry.ui \
-    editentryform.ui
+    editentryform.ui \
+    removeentryform.ui
 
 RESOURCES += \
     libmanagementresources.qrc
