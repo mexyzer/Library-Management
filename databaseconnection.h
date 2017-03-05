@@ -20,7 +20,7 @@ public:
     connectDatabase() {}
     QSqlDatabase bookDB = QSqlDatabase::addDatabase("QSQLITE");
     bool openConnection(){
-        bookDB.setDatabaseName("/home/gajesh/QtProjects/QtSampleDBConnect/BookSearch.db");
+        bookDB.setDatabaseName("/home/gajesh/QtProjects/LibraryManagement/LibManagementResourceFiles/Database/Books.db");
         return bookDB.open();
     }
 

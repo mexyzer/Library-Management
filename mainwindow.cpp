@@ -102,3 +102,18 @@ void MainWindow::on_actionRemove_Entry_triggered()
 {
     removeEntry.show();
 }
+
+void MainWindow::on_actionAbout_Developer_triggered()
+{
+    QMessageBox::about(this,"Library Management Software","Created by Gajesh Bhat");
+}
+
+void MainWindow::on_actionAbout_Qt_triggered()
+{
+    QMessageBox::aboutQt(this,"About Qt");
+}
+
+void MainWindow::on_actionExit_triggered()
+{
+    this->close();
+}

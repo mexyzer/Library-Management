@@ -13,5 +13,7 @@
         <file>mainwindow.h</file>
         <file>mainwindow.ui</file>
         <file>LibManagementResourceFiles/Icons/database-remove-icon.png</file>
+        <file>LibManagementResourceFiles/Icons/QtProject-creator-icon.png</file>
+        <file>LibManagementResourceFiles/Icons/Very-Basic-About-icon.png</file>
     </qresource>
 </RCC>

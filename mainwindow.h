@@ -28,6 +28,12 @@ private slots:
 
     void on_actionRemove_Entry_triggered();
 
+    void on_actionAbout_Developer_triggered();
+
+    void on_actionAbout_Qt_triggered();
+
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
     addbookentry addEntryForm;
