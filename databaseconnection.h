@@ -12,6 +12,7 @@
 #include <QSqlQueryModel>
 #include <string>
 #include <QString>
+#include <QDir>
 #include <QComboBox>
 
 class connectDatabase
@@ -20,7 +21,8 @@ public:
     connectDatabase() {}
     QSqlDatabase bookDB = QSqlDatabase::addDatabase("QSQLITE");
     bool openConnection(){
-        bookDB.setDatabaseName("/home/gajesh/QtProjects/LibraryManagement/LibManagementResourceFiles/Database/Books.db");
+        QString databasePath = QDir::currentPath() + "LibraryManagementResourceFiles/Database/Books.db"; // Database path
+        bookDB.setDatabaseName(databasePath);
         return bookDB.open();
     }
 
